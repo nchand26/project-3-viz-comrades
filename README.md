@@ -4,7 +4,8 @@
  **Authors: Swetha Jayakumar, Nihal Chandra**
 
 **Link to Webpage**: https://nchand26.github.io/project-3-viz-comrades/ 
-<br>**Link to Observable Notebook**: 
+<br>
+![Number of Trips based Day of the Week](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/homepage.PNG)
 
 This projects aims to explore the [Chicago Taxi Trips Dataset](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew) through interactive and informative Visualizations. 
 
