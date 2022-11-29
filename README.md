@@ -92,14 +92,12 @@ Let's try to understand this baseline approach better by breaking it down to ste
 **Representation**
 <br>The visualization is represented through a bar chart since we are comparing a quantitative attribute (Amount in $) vs a time based attribute (day of the week) over two quantitative attributes (Fare and Trip Total). 
 
-![Trip Fare compare with the Trip Total for each day of the week](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/TripFarevsTripTotal.PNG) 
-
 **Task 3: Interaction Techniques**
 
 **Interaction**
 <br>When we hover over any bar, its color fades and it shows the corresponding cumulative Fare amount or Trip Total.
 
-![2.Interaction on hovering](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/TFvsTTInteraction.PNG) 
+![Number of Trips based Day of the Week](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTripTotalvsDay.PNG) 
 
 **3.Domain Question**: Is the Trip Fare positively correlated to the Trip Total?
 <br>**Data Attributes Used**:
