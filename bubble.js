@@ -15,17 +15,17 @@ const loadAllFiles = async () => {
 
   const plot1 = async () => {
 
-    const width = 800;
-    const height = 650;
+    const width = 700;
+    const height = 700;
 
     var svg = d3.selectAll('#bubble1')
 
-    const margin = { left: 50, top: 10, right: 20, bottom: 50 }
+    const margin = { left: 70, top: 10, right: 80, bottom: 50 }
 
 
   var xScale = d3.scaleLinear()
     .domain(d3.extent(taxi, function(d) {return d['Trip Miles'];}))
-    .range([margin.left, width])
+    .range([margin.left, width - margin.right])
 
 var yScale = d3.scaleLinear()
     .domain(d3.extent(taxi, function(d) {return d.Fare;}))
@@ -62,8 +62,7 @@ var zScale = d3.scaleLinear()
       .attr('id', (d,i) => {
         return 'b'+i.toString()})
         .on("mouseover",onOver)
-        .on("mouseout",onOut)
-        .append('title').text(d => `Trip Miles: ${Math.round(d['Trip Miles'])} miles\nTrip Fare: $${Math.round(d.Fare)}\nTrip Duration: ${Math.round(d['Trip Minutes'])} mins`);
+        .on("mouseout",onOut);
       //.attr('r', d => zScale(d.Tips));
 
       svg.append("text")
@@ -77,7 +76,7 @@ var zScale = d3.scaleLinear()
     .attr("class", "y label")
     .attr("text-anchor", "end")
     .attr("x", 0-200)
-    .attr("y", 10)
+    .attr("y", 0)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("Fare Amount in Dollars");
@@ -87,12 +86,12 @@ var zScale = d3.scaleLinear()
 
   const plot2 = async () => {
 
-    const width = 800;
-    const height = 650;
+    const width = 700;
+    const height = 700;
 
     var svg = d3.selectAll('#bubble2')
 
-    const margin = { left: 50, top: 10, right: 20, bottom: 50 }
+    const margin = { left: 70, top: 10, right: 80, bottom: 50 }
 
 
   var xScale = d3.scaleLinear()
@@ -131,12 +130,11 @@ var zScale = d3.scaleLinear()
       //.attr('fill', 'Plum')
       .attr('opacity', 1)
       .attr('r', 3)
-      .attr('opacity',0.5)
+      .attr('opacity',0.1)
       .attr('id', (d,i) => {
         return 'b'+i.toString()})
         .on("mouseover",onOver)
-        .on("mouseout",onOut)
-        .append('title').text(d => `Trip Miles: ${Math.round(d['Trip Miles'])} miles\nTrip Fare: $${Math.round(d.Fare)}\nTrip Duration: ${Math.round(d['Trip Minutes'])} mins`);
+        .on("mouseout",onOut);
       //.attr('r', d => zScale(d.Tips));
 
       svg.append("text")
@@ -150,40 +148,10 @@ var zScale = d3.scaleLinear()
     .attr("class", "y label")
     .attr("text-anchor", "end")
     .attr("x", 0-200)
-    .attr("y", 10)
+    .attr("y", 0)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
     .text("Fare Amount in Dollars");
-
-    // create a list of keys
-var keys = ["Cash", "Credit Card", "Dispute",'Mobile','No Charge','Prcard','Unknown']
-
-// Usually you have a color scale in your chart already
-var color = ['#66c2a5','#fc8d62','#e5c494','#a6d854','#ffd92f','#8da0cb','#e78ac3']
-
-// Add one dot in the legend for each name.
-var size = 20
-svg.selectAll("mydots")
-  .data(keys)
-  .enter()
-  .append("rect")
-    .attr("x", 600)
-    .attr("y", function(d,i){ return 30 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
-    .attr("width", size)
-    .attr("height", size)
-    .style("fill", function(d,i){ return color[i]})
-
-// // Add one dot in the legend for each name.
-svg.selectAll("mylabels")
-  .data(keys)
-  .enter()
-  .append("text")
-    .attr("x", 600 + size*1.2)
-    .attr("y", function(d,i){ return 30 + i*(size+5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
-    .text(function(d){ return d})
-    .attr("text-anchor", "left")
-    .style("alignment-baseline", "middle")
-        
 
     };
 
@@ -204,8 +172,9 @@ svg.selectAll("mylabels")
     pay = i.target.__data__['Payment Type']
   
     id = "#"+ i.path[0].id.toString()
-    d3.selectAll(id).style('fill', paymentColor(pay)).style('r',3).style('opacity',0.5);  
-    
+    console.log(i.target.__data__['Payment Type'])
+    d3.selectAll(id).style('fill', paymentColor(pay)).style('r',3).style('opacity',0.1);       
+        
        };
 
   window.onload = loadAllFiles;
