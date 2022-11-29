@@ -5,6 +5,7 @@
 
 **Link to Webpage**: https://nchand26.github.io/project-3-viz-comrades/ 
 <br><br>
+**Visualization Interface**
 ![Homepage](https://github.com/nchand26/project-3-viz-comrades/blob/main/homepage.PNG)
 
 This projects aims to explore the [Chicago Taxi Trips Dataset](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew) through interactive and informative Visualizations. 
@@ -26,9 +27,10 @@ An initial look at the dataset led to the following inferences:
 
 **Questions Answered**  
 As a part of this project, the questions we tried to answer through visualization are:
-- How many taxi trips do the popular taxi company's cabs make over the week?
-- Is the Trip Fare positively correlated to the Trip Total?
-- How do the tips relate to the Fare amount based on each taxi company?
+- How does the Trip Fare compare with the Trip Total for the entire week?
+- Is the Trip Fare positively correlated to the Tip?
+- How does the fare relate to the trip distance and duration?
+- For each community area, how do the top three taxi companies perform over the week?
 
 **Baseline Apporach**
 <br>The baseline approach followed to analyze and visualize these questions is as follows:
@@ -41,39 +43,11 @@ Let's try to understand this baseline approach better by breaking it down to ste
 <br>The [website](https://nchand26.github.io/project-3-viz-comrades/) has been created and hosted using [GitHub pages](https://pages.github.com/) and all the related files can be found in this repository.
 
 **Task 1: Creating an empty page** 
-
+The webpage has been created using HTML and JavaScript and hosted via Github Pages. The page is structured in such a way that, in order to navigate to any visualization, just click on the corresponding question number in the navigation bar or the hyperlink on the Homepage.
 
 **Using previous visualizations**
 
-<br>**1.Domain Question**: How many taxi trips do the popular taxi company's cabs make over the week?
-<br>**Data Attributes Used**:
-- Trip Start Timestamp (Time)
-- Trip Day (Time)
-- Company (Categorical)
-
-**Transformations Performed**: Extracted *'Trip Day'* from *'Trip Start Timestamp'* in the preprocessing stage using Pandas in Python.
-
-**Data Question**: How does the total number of taxi trips taken by the 3 most popular taxi companies compare for each day of the week?
-
-**Visual Encoding**
-- Each Line to represent the change in the total number of trips of each taxi company.
-- Colors to represent Taxi Company (Pink - Flash Cab, Teal - Taxi Affiliation Services, Purple - Sun Taxi)
-
-**Representation**
-<br>The visualization is represented through a line chart since we are comparing a quantitative attribute (total number of trips) vs a time based attribute (day of the week) over a catagorical attribute (taxi company). 
-
-**Design Choice**
-- Using a line chart was the most appropriate choice for this visualization since we were trying to show quantitative data over a period of time. 
-- We used multiple lines since we were showing categorical data as well.
- 
-**Findings**
-- We find that the number of trips for the Taxi affiliated service company does not change drastically over the week.
-- Flash cab and Sun Taxi see few trips during the weekdays but many trips over the weekend.
-  
-![Number of Trips based Day of the Week](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTripTotalvsDay.PNG)
-
-
-**2.Domain Question**: How does the Trip Fare compare with the Trip Total for the entire week?
+**1.Domain Question**: How does the Trip Fare compare with the Trip Total for the entire week?
 <br>**Data Attributes Used**:
 - Trip Start Timestamp (Time)
 - Trip Day (Time)
@@ -92,14 +66,20 @@ Let's try to understand this baseline approach better by breaking it down to ste
 **Representation**
 <br>The visualization is represented through a bar chart since we are comparing a quantitative attribute (Amount in $) vs a time based attribute (day of the week) over two quantitative attributes (Fare and Trip Total). 
 
-**Task 3: Interaction Techniques**
+**Design Choice**
+- We used a bar chart for this visualization because we were trying to compare two quantities belonging to different attributes such as fare and trip total.
+- We reduce the opacity based on the user hovering over a bar so that the user knows which bar is selected. We show the tooltip to display to the user the exact amount in dollars.
+ 
+**Findings**
+- We find that the number of trips on Wednesday is extremely low when compared to other days.
+- We see that there is a positive correlation between the trip total and the fare proving there the additional charges do not vary much over the week.
 
 **Interaction**
-<br>When we hover over any bar, its color fades and it shows the corresponding cumulative Fare amount or Trip Total.
+<br>When we hover over any bar, its color fades and a tooltip pops up to show the corresponding cumulative Fare amount or Trip Total.
 
 ![Number of Trips based Day of the Week](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTripTotalvsDay.PNG) 
 
-**3.Domain Question**: Is the Trip Fare positively correlated to the Trip Total?
+**2.Domain Question**: Is the Trip Fare positively correlated to the Tip?
 <br>**Data Attributes Used**:
 - Fare (Quantitative)
 - Tips (Quantitative)
@@ -119,19 +99,6 @@ Let's try to understand this baseline approach better by breaking it down to ste
 <br>The visualization is represented through mulliple linked views - a brushable scatterplot and a linked bar chart. The Scatterplot helps us understand the correlation between Tips and Fares. It is also the area where the user can brush over to select a smaller subset and visualize the corresponding change in the linked bar chart. The Bar chart contains Taxi companies compared with their corresponding highlighted count.
 
 **Design Choice**
-- We used a bar chart for this visualization because we were trying to compare two quantities belonging to different attributes such as fare and trip total.
-- We reduce the opacity based on the user hovering over a bar so that the user knows which bar is selected. We show the tooltip to display to the user the exact amount in dollars.
- 
-**Findings**
-- We find that the number of trips on Wednesday is extremely low when compared to other days.
-- We see that there is a positive correlation between the trip total and the fare proving there the additional charges do not vary much over the week.
-
-**Interaction**
-<br>This visualization provides the interactive ability to brush over the scatter plot to highlight a specific portion of it, and on doing so, we can observe the corresponding change in the adjacent linked bar chart. To brush over the scatterplot, simply drag the mouse over the desired area and release it to observe the effect.
-
-![Brushing effect on Visualization](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTipvsCompany.PNG) 
-
-**Design Choice**
 - We used a scatter plot to show the relationship between two quantities so that we can easily identify any trends.
 - We use a bar chart to show the number of trips for each cab company since it is easier to see the count.
 - The brushing interaction allows the user to select specific trips to see a more detailed view.
@@ -140,10 +107,48 @@ Let's try to understand this baseline approach better by breaking it down to ste
 - We see that for the most part tips and fare are positively correlated.
 - We also see that people prefer to pay the tip in whole dollar amounts rather than in cents.
 
+**Interaction**
+<br>This visualization provides the interactive ability to brush over the scatter plot to highlight a specific portion of it, and on doing so, we can observe the corresponding change in the adjacent linked bar chart. To brush over the scatterplot, simply drag the mouse over the desired area and release it to observe the effect.
+
+![Brushing effect on Visualization](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTipvsCompany.PNG) 
+
+
 **Task 3: New multiple linked view**
 
+**3.Domain Question**: How does the fare relate to the trip distance and duration based on the type of payment?
+<br>**Data Attributes Used**:
+- Fare (Quantitative)
+- Trip Start Timestamp (Time)
+- Trip Minutes (Time)
+- Trip Miles (Quantitative)
+- Payment Type (Categorical)
+
+**Transformations Performed**: Extracted *'Trip Minutes'* from *'Trip Start Timestamp'* in the preprocessing stage using Pandas in Python.
+
+**Data Question**: How does the Trip fare relate to the Miles travelled and Minutes travelled based on the payment method?
+
+**Visual Encoding**
+- Each point on the scatter plot represents a trip and is given a particular color based on the payment method used.
+- Each color represents a particular payment method.
+
+**Representation**
+<br>The visualization is represented through mulliple linked views - two linked scatterplots. The Scatterplot helps us understand the correlation between the Fare and Miles/Minutes. 
+
+**Design Choice**
+- We used a scatter plot to show the relationship between two quantities so that we can easily identify any trends.
+- A pointer is used to hover over the plot as it is easier to pin-point a taxi trip on the plot.
+- A tooltip is used to show the current value of the pointed trip.
+ 
+**Findings**
+<br>We see that there is a positive correlation in both the cases - between the trip miles-fare and trip minutes-fare, although the later is much steeper than the former.
+
+**Interaction**
+<br>To intereact with the visualization, the user can move the cursor over either of the plots and observe the corresponding value change in the other plot. A tooltip pops up showing the Trip Miles, Fare, and Minutes for that particular trip. 
+
+![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question3.PNG) 
+
 **Task 4: New spatial view**
-**5.Domain Question**: How many taxi pickups are there from each Community of Chicagoland?
+<br>**4.Domain Question**: For each community of Chicago, how do the top taxi companies perform over the week?
 <br>**Data Attributes Used**:
 - Pickup Community Area (Spatial) 
 - Pickup Centroid Latitude (Spatial)
@@ -152,30 +157,33 @@ Let's try to understand this baseline approach better by breaking it down to ste
 
 **Transformations Performed**: Aggregated the number of trips in each community area during the preprocessing stage using Pandas in Python.
 
-**Data Question**: How does the number of taxi pickups compare in each community area of Chicago?
+**Data Question**: For each community area, how do the top three taxi companies perform over the week?
 
 **Visual Encoding**
 - A chloropeth map to represent the community boundaries of Chicago.
-- Colors to represent the number of Taxi Trips taken in each community area.
-- Horizontal Bars to represent and compare the number of trips from that area.
+- The darkness of color represents the number of Taxi Trips taken in each community area.
+- Lines to represent and compare the number of trips from that area over the week.
+- Each color of the line graph represents one of the top 3 cab companies. 
 
 **Representation**
-<br>This visualization provides the interactive ability to hover over a particular community in the map of Chicago and observe the number of trips from the corresponding community in the adjacent linked horizontal bar chart. To hover over the map, simply move the mouse over to the desired community area.
+<br>This visualization is represented through multiple linked views - a chloropath map and an adjacent linked line chart. The chloropath map is a map of Chicago seperated based on communities where the darkness of color over a particular community signifies the density of cab trips in that area. A line chart is used to visualize how the three most popular cab companies perform over the week in a selected community area.
 
 **Design Choice**
-- Reason 1
-- Reason 2
+- We have used a chloropeth map as it is a good approach to visualize spatial data and makes it easier for the user to interpret.
+- A line chart has been used as the linked plot since we are trying to visualize quantitative data changing over the week.
 
 **Findings**
-- Finding 1
-- Finding 2
-  
-![Visualization Image]()
+- The area near Downtown and Loop has higher taxi traffic compared to other communities, probably due to the presence of alot of attractions in the area.
+- Overall, if we look at the line charts of different communities, we observe that Taxi Affiliation Serives has the highest average over the week and the number of trips shoot up significantly as the weekend arrives.
 
+**Interaction**
+<br>This visualization provides the interactive ability to click on a particular community in the map of Chicago and observe the number of trips from the corresponding community for the entire week in the adjacent linked line chart. To switch to another community area, simply click on that area and view the results in adjacent line graph.
+
+![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question4.PNG) 
+  
 **Coding Environment** \
 The entire code execution and visualization has been performed as follows:
 - Data Preprocessing in a Jupyter notebook using Python.
-- Visualization  and interaction in an Observable notebook using JavaScript and D3.
 - Visualization and presentation on the Webpage through Visual Studio Code using HTML, D3 and JavaScript.
 - Documentation in Github.
 
