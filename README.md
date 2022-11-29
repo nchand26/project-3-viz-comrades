@@ -126,12 +126,10 @@ Let's try to understand this baseline approach better by breaking it down to ste
 - We find that the number of trips on Wednesday is extremely low when compared to other days.
 - We see that there is a positive correlation between the trip total and the fare proving there the additional charges do not vary much over the week.
 
-![Trip Fare compare with the Trip Total for each day of the week](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/TipFareCompany.PNG) 
-
 **Interaction**
 <br>This visualization provides the interactive ability to brush over the scatter plot to highlight a specific portion of it, and on doing so, we can observe the corresponding change in the adjacent linked bar chart. To brush over the scatterplot, simply drag the mouse over the desired area and release it to observe the effect.
 
-![Brushing effect on Visualization](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/hoveredlinkedview.PNG) 
+![Brushing effect on Visualization](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTipvsCompany.PNG) 
 
 **Design Choice**
 - We used a scatter plot to show the relationship between two quantities so that we can easily identify any trends.
