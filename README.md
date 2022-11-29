@@ -4,7 +4,7 @@
  **Authors: Swetha Jayakumar, Nihal Chandra**
 
 **Link to Webpage**: https://nchand26.github.io/project-3-viz-comrades/ 
-<br>
+<br><br>
 ![Homepage](https://github.com/nchand26/project-3-viz-comrades/blob/main/homepage.PNG)
 
 This projects aims to explore the [Chicago Taxi Trips Dataset](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew) through interactive and informative Visualizations. 
@@ -70,7 +70,7 @@ Let's try to understand this baseline approach better by breaking it down to ste
 - We find that the number of trips for the Taxi affiliated service company does not change drastically over the week.
 - Flash cab and Sun Taxi see few trips during the weekdays but many trips over the weekend.
   
-![Number of Trips based Day of the Week](https://github.com/uic-vis/project-2-viz-comrades/blob/main/imgs/totalTripsvsDay.PNG)
+![Number of Trips based Day of the Week](https://github.com/nchand26/project-3-viz-comrades/blob/main/FarevsTripTotalvsDay.PNG)
 
 
 **2.Domain Question**: How does the Trip Fare compare with the Trip Total for the entire week?
