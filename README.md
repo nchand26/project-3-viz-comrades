@@ -145,7 +145,7 @@ The webpage has been created using HTML and JavaScript and hosted via Github Pag
 **Interaction**
 <br>To intereact with the visualization, the user can move the cursor over either of the plots and observe the corresponding value change in the other plot. A tooltip pops up showing the Trip Miles, Fare, and Minutes for that particular trip. 
 
-![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question3.PNG) 
+![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question3.png) 
 
 **Task 4: New spatial view**
 <br>**4.Domain Question**: For each community of Chicago, how do the top taxi companies perform over the week?
@@ -179,7 +179,7 @@ The webpage has been created using HTML and JavaScript and hosted via Github Pag
 **Interaction**
 <br>This visualization provides the interactive ability to click on a particular community in the map of Chicago and observe the number of trips from the corresponding community for the entire week in the adjacent linked line chart. To switch to another community area, simply click on that area and view the results in adjacent line graph.
 
-![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question4.PNG) 
+![Linked Scatterplots](https://github.com/nchand26/project-3-viz-comrades/blob/main/question4.png) 
   
 **Coding Environment** \
 The entire code execution and visualization has been performed as follows:
