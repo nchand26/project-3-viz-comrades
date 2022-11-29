@@ -5,7 +5,7 @@
 
 **Link to Webpage**: https://nchand26.github.io/project-3-viz-comrades/ 
 <br>
-![Homepage](https://github.com/nchand26/project-3-viz-comrades/homepage.PNG)
+![Homepage](https://github.com/nchand26/project-3-viz-comrades/blob/main/homepage.PNG)
 
 This projects aims to explore the [Chicago Taxi Trips Dataset](https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew) through interactive and informative Visualizations. 
 
